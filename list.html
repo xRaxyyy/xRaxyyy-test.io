@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="nl">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="test.css">
+    <script defer type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script defer src="list.js"></script>
+
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-bold-straight/css/uicons-bold-straight.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+
+<body>
+
+    <section id="navbar">
+        <div id="navbar-region">
+            <a href="../list.html?NL" class="clickable">NL</a>
+            <a>/</a>
+            <a href="../list.html?BE" class="clickable">BE</a>
+        </div>
+
+        <div id="navbar-group">
+            <a href="index.html" >
+                <div id="navbar-button">Home</div>
+            </a>
+            <!-- <a href="faq.html">
+                <div id="navbar-button">FAQ</div>
+            </a>
+            <a href="api.html">
+                <div id="navbar-button">API</div>
+            </a> -->
+            <a href="contact.html" >
+                <div id="navbar-button">Contact</div>
+            </a>
+        </div>
+    </section>
+
+    <section id="header">
+        <a id="header-logo" href="index.html">
+            <img src="Images/logo.png" alt="Logo">
+        </a>
+
+        <h1>HulpdienstVoertuigen</h1>
+        <h2>De beste hulpvoertuigen database voor de Benelux</h2>
+    </section>
+
+    <section id="list-buttons">
+        <input id="search-input" type="text" autocomplete="off" placeholder="Zoek een adres">
+        <div id="dropdown-holder">
+            <div class="dropdown">
+                <div id="hulpdienst-dropdown" class="dropdown-button">Alle Hulpdiensten<i class="fa fa-chevron-down"></i></div>
+                <ul class="dropdown-menu">
+                    <!-- <li value="all">Alle Hulpdiensten</li>
+                    <li value="Politie">Politie</li>
+                    <li value="Brandweer">Brandweer</li>
+                    <li value="Ambulance">Ambulance</li>
+                    <li value="Reddingsbrigade">Reddingsbrigade</li>
+                    <li value="KNRM">KNRM</li>
+                    <li value="ProRail">ProRail</li>
+                    <li value="Rijkswaterstaat">Rijkswaterstaat</li>
+                    <li value="Ziekenhuizen">Ziekenhuizen</li>
+                    <li value="Scholen">Scholen</li>
+                    <li value="Meldkamers">Meldkamers</li>
+                    <li value="Provincies">Provincies</li> -->
+                </ul>
+            </div>
+            <div class="dropdown">
+                <div id="regio-dropdown" class="dropdown-button">Alle Regio's<i class="fa fa-chevron-down"></i></div>
+                <ul class="dropdown-menu">
+                    <!-- <li value="all">Alle Regio's</li>
+                    <li value="1">1 - Groningen (HVDG)</li>
+                    <li value="2">2 - Fryslan (VRF)</li>
+                    <li value="3">3 - Drenthe (VRD)</li>
+                    <li value="4">4 - Ijsselland (VRIJ)</li>
+                    <li value="5">5 - Twente (VRT)</li>
+                    <li value="6">6 - Noord en Oost-Gelderland (VNOG)</li>
+                    <li value="7">7 - Gelderland Midden (VGGM)</li>
+                    <li value="8">8 - Gelderland Zuid (VRGZ)</li>
+                    <li value="9">9 - Utrecht (VRU)</li>
+                    <li value="10">10 - Noord-Holland Noord (VRNHN)</li>
+                    <li value="11">11 - Zaanstreek-Waterland (VRZW)</li>
+                    <li value="12">12 - Kennemerland (VRK)</li>
+                    <li value="13">13 - Amsterdam-Amstelland (VRAA)</li>
+                    <li value="14">14 - Gooi en Vechtstreek (VRGV)</li>
+                    <li value="15">15 - Haaglanden (VRH)</li>
+                    <li value="16">16 - Hollands Midden (VRHM)</li>
+                    <li value="17">17 - Rotterdam-Rijnmond (VRR)</li>
+                    <li value="18">18 - Zuid-Holland Zuid (VRZHZ)</li>
+                    <li value="19">19 - Zeeland (VRZ)</li>
+                    <li value="20">20 - Midden- en West-Brabant (VRMWB)</li>
+                    <li value="21">21 - Brabant-Noord (VRBN)</li>
+                    <li value="22">22 - Brabant Zuid Oost (VRBZO)</li>
+                    <li value="23">23 - Limburg-Noord (VRLN)</li>
+                    <li value="24">24 - Zuid-Limburg (VRZL)</li>
+                    <li value="25">25 - Flevoland (VRFL)</li> -->
+                </ul>
+            </div>
+        </div>        
+    </section>
+
+    <div id="table-container">
+        <section id="table">
+            <table id="list_table">
+                <tr>
+                    <th class="th-class-1">Adres</th>
+                    <th class="th-class-2">Roepnaam</th>
+                    <th class="th-class-3">Type Voertuig</th>
+                    <th class="th-class-4">Type Voertuig</th>
+                    <th class="th-class-5">Kenteken</th>
+                    <th class="th-class-6">Bijzonderheden</th>
+                </tr>
+                <!-- Add more rows here -->
+            </table>
+        </section>
+    </div>
+    
+    <section id="scrollbar-section">
+        <div id="scrollbar">
+            <div id="scrollbar-inner"></div>
+        </div>
+    </section>
+    
+    <script>
+        const scrolltable = document.getElementById('table');
+        const scrollbar = document.getElementById('scrollbar');
+    
+        scrollbar.addEventListener('scroll', () => {
+            scrolltable.scrollLeft = scrollbar.scrollLeft;
+        });
+    
+        scrolltable.addEventListener('scroll', () => {
+            scrollbar.scrollLeft = scrolltable.scrollLeft;
+        });
+    </script>
+    
+    
+    
+
+    <!-- <section id="navbar" class="footer">
+        <div id="navbar-group">
+            <a href="faq.html">
+                <div id="navbar-button">FAQ</div>
+            </a>
+            <a href="api.html">
+                <div id="navbar-button">API</div>
+            </a>
+            <a href="contact.html" >
+                <div id="navbar-button">Contact</div>
+            </a>
+        </div>
+    </section> -->
+
+</body>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const dropdowns = document.querySelectorAll(".dropdown");
+
+    dropdowns.forEach((dropdown) => {
+        const button = dropdown.querySelector(".dropdown-button");
+        const menu = dropdown.querySelector(".dropdown-menu");
+        const options = menu.querySelectorAll("li");
+
+        // Open/close dropdown menu on button click
+        button.addEventListener("click", (event) => {
+            // Close all other dropdowns
+            dropdowns.forEach((d) => {
+                if (d !== dropdown) d.classList.remove("active");
+            });
+            // Toggle the current dropdown
+            dropdown.classList.toggle("active");
+        });
+
+        // Select an option from the dropdown
+        options.forEach((option) => {
+            option.addEventListener("click", () => {
+                // Update the button text to the selected option
+                button.textContent = option.textContent;
+                button.setAttribute("data-value", option.getAttribute("value"));
+
+                // Close the dropdown menu
+                dropdown.classList.remove("active");
+
+                // Trigger an update
+                updAndClear();
+            });
+        });
+    });
+
+    // Close dropdowns if clicked outside
+    document.addEventListener("click", (event) => {
+        if (!event.target.closest(".dropdown")) {
+            dropdowns.forEach((dropdown) => dropdown.classList.remove("active"));
+        }
+    });
+});
+
+/**
+ * Function to update the list based on dropdowns and search input.
+ */
+function updAndClear() {
+    count = 100;
+    updateList();
+}
+
+</script>

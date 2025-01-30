@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="nl">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="stylee.css">
+    </head>
+<body>
+
+    <!-- Homepage -->
+    <section class="homepage">
+
+        <!-- Header -->
+        <header class="header">
+
+            <!----Buttons---->
+            <nav id="nav-container">
+
+                <button class="nav-btn">FAQ</button>
+                <!-- <button class="nav-btn">API</button> -->
+                <a href="contact.html" >
+                    <button class="nav-btn">Contact</button>
+                </a>
+
+            </nav>
+        </header>
+    
+        <!-- Title/Search -->
+        <div class="title hidden">
+
+            <!----Title---->
+            <div ><img  id="title_logo" src="Images/Logos/LogoGradient.png" alt=""></div>
+            <h1 class="h1 h--center">Hulpdienstvoertuigen</h1>
+            <h2 class="h2 h--center">De beste hulpvoertuigen database voor de Benelux</h2>
+
+            <!----Search---->
+            <div id="search_home" class="title_search">
+                <!-- <input class="srch-box" type="text" placeholder="Zoek een adres"> -->
+                <a href="list.html">
+                    <button class="btn btn--glow" onclick="GetData()">Lijst Nederland</button>
+                </a>
+                <a href="list.html">
+                    <button class="btn btn--glow" onclick="GetData()">Lijst Belgie</button>
+                </a>
+            </div>
+
+        </div>
+    
+        <!-- Images -->
+        <div class="image-container hidden">
+            <div class="image">16/9</div>
+            <div class="image">16/9</div>
+            <div class="image">16/9</div>
+        </div>
+    </section>
+
+    <!-- Info page -->
+    <section class="infopage hidden">
+
+        <!-- Locatie -->
+        <div id="info-loc">
+            <h1 class="h1">Voor Nederland en België!</h1>
+            <div class="body">De lijst behoud informatie voor Nederland en België en is daardoor de beste database voor hulpvoertuigen in de Benelux</div>
+        </div>
+
+        <!-- Betrouwbaar -->
+        <div id="info-trust">
+            <h1 class="h1">Betrouwbare informatie</h1>
+            <div class="body">De meest betrouwbare informatie wordt weergegeven op deze website, deze informatie komt van meerdere bronnen</div>
+        </div>
+    </section>
+
+    <!-- Cards page -->
+    <section class="cardspage hidden">
+        <h1 class="h1 h--center">Hulpdiensten</h1>
+        <h2 class="h2 h--center">Op de lijst</h2>
+        <div id="cards-container">
+            <div class="card-container">
+                <div class="card">
+                    <img src="./Images/Buttons/Politie.png" alt="Politie">
+                    <div class="card-text">
+                        <h3 class="h3">Politie</h3>
+                        <p class="body">Helpt met beschermen, begrenzen en bekrachtigingen</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-container">
+                <div class="card">
+                    <img src="./Images/Buttons/Politie.png" alt="Brandweer">
+                    <div class="card-text">
+                        <h3 class="h3">Brandweer</h3>
+                        <p class="body">Helpt met beschermen, begrenzen en bekrachtigingen</p>
+                    </div>
+                </div>
+            </div>
+            <!-- <button class="card hidden">Politie <img src="./Images/Buttons/Politie.png" alt=""></button>
+            <button class="card hidden">Brandweer</button>
+            <button class="card hidden">Ambulance</button>
+            <button class="card hidden">Reddingsbrigade</button>
+            <button class="card hidden">KNRM</button>
+            <button class="card hidden">ProRail</button>
+            <button class="card hidden">Rijkswaterstaat</button>
+            <button class="card hidden">Ziekenhuizen</button>
+            <button class="card hidden">Scholen</button>
+            <button class="card hidden">Meldkamers</button>
+            <button class="card hidden">Provincies</button> -->
+        </div>
+    </section>
+
+    <section class="bottom_page">
+        <h3 class="h3 h--center hidden">Iets niet op de lijst?</h2>
+        <div class="body h--center hidden">Of aanpassingen nodig?</div>
+        <a href="contact.html">
+            <button class="btn btn--glow hidden">Neem contact op!</button>
+        </a>
+    </section>
+
+    <footer class="footer">
+
+        <!----Buttons---->
+        <nav id="nav-container">
+
+            <button class="nav-btn">FAQ</button>
+            <button class="nav-btn">API</button>
+            <a href="contact.html" >
+                <button class="nav-btn">Contact</button>
+            </a>
+
+        </nav>
+    </footer>
+
+    <script src="index.js"></script>
+    <script src="dropdowns.js"></script>
+
+</body>
+</html>

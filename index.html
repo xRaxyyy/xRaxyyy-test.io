@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="nl">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+
+<body>
+    
+    <section id="navbar">
+        <div id="navbar-group">
+            <a href="index.html" >
+                <div id="navbar-button" class="active">Home</div>
+            </a>
+            <!-- <a href="faq.html">
+                <div id="navbar-button">FAQ</div>
+            </a>
+            <a href="api.html">
+                <div id="navbar-button">API</div>
+            </a> -->
+            <a href="contact.html" >
+                <div id="navbar-button">Contact</div>
+            </a>
+        </div>
+    </section>
+
+    <section id="header">
+        <a id="header-logo" href="index.html">
+            <img src="Images/logo.png" alt="Logo">
+        </a>
+    
+        <h1>HulpdienstVoertuigen</h1>
+        <h2>De beste hulpvoertuigen database voor de Benelux</h2>
+    
+        <div id="header-btn-group">
+            <button id="btn-nl">Lijst Nederland</button>
+            <button id="btn-be">Lijst Belgie</button>
+        </div>
+    </section>    
+
+    <section id="image-container">
+
+        <div class="image-holder">
+            <img class="holder-1" src="Images/politie-img.jpg" alt="Politie">
+        </div>
+        <div class="image-holder">
+            <img class="holder-2" src="Images/brandweer-img.jpg" alt="Brandweer">
+        </div>
+        <div class="image-holder">
+            <img class="holder-3" src="Images/ambulance-img.jpg" alt="Ambulance">
+        </div>
+
+    </section>
+
+    <section id="home-info">
+        <div id="left">
+            <img src="Images/Flag.png" alt="">
+            <div id="left-text">
+                <h1>Voor Nederland en Belgie!</h1>
+                <h2>De lijst behoud informatie voor Nederland en België en is daardoor de beste database voor hulpvoertuigen in de Benelux</h2>
+            </div>
+        </div>
+        <div id="right">
+            <img src="Images/Shield.png" alt="">
+            <div id="right-text">
+                <h1>Betrouwbare informatie</h1>
+                <h2>De meest betrouwbare informatie wordt weergegeven op deze website, deze informatie komt van meerdere bronnen</h2>
+            </div>
+        </div>
+    </section>
+
+    <section id="index-list">
+        <h1>Hulpdiensten</h1>
+        <h2>Op de lijst</h2>
+    
+        <div id="buttons-holder">
+            <div class="button-row">
+                <div id="list-images"><img src="Images/Buttons/Politie.png" alt="Politie"></div>
+                <div id="list-images"><img src="Images/Buttons/Brandweer.png" alt="Brandweer"></div>
+                <div id="list-images"><img src="Images/Buttons/Ambulance.png" alt="Ambulance"></div>
+                <div id="list-images"><img src="Images/Buttons/Reddingsbrigade.png" alt="Reddingsbrigade"></div>
+            </div>
+            <div class="button-row">
+                <div id="list-images"><img src="Images/Buttons/Rijkswaterstaat.png" alt="Rijkswaterstaat"></div>
+                <div id="list-images"><img src="Images/Buttons/KNRM.png" alt="KNRM"></div>
+                <div id="list-images"><img src="Images/Buttons/Prorail.png" alt="Prorail"></div>
+                <div id="list-images"><img src="Images/Buttons/Scholen.png" alt="Prorail"></div>
+            </div>
+            <div class="button-row">
+                <div id="list-images"><img src="Images/Buttons/Meldkamers.png" alt="Meldkamers"></div>
+                <div id="list-images"><img src="Images/Buttons/Provincies.png" alt="Provincies"></div>
+                <div id="list-images"><img src="Images/Buttons/Ziekenhuis.png" alt="Ziekenhuis"></div>
+                <div id="list-images"><img src="Images/Buttons/Kustwacht.png" alt="Kustwacht"></div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const buttons = document.querySelectorAll("#list-images img");
+
+        buttons.forEach((button) => {
+            button.addEventListener("click", () => {
+            const altText = button.getAttribute("alt"); // Get the alt attribute value
+                localStorage.setItem("selectedDropdownValue", altText); // Store it in localStorage
+                window.location.href = "list.html?NL"; // Redirect to list.html
+            });
+        });
+    });
+
+    </script>
+
+    <section id="index-questions">
+        <h1>Iets niet op de lijst?</h1>
+        <h2>Of aanpassingen nodig?</h2>
+        <div id="header-btn-group">
+            <button id="contact-btn">Neem contact op!</button>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById("contact-btn").addEventListener("click", function () {
+            window.location.href = "contact.html";
+        });
+    </script>
+
+    <section id="navbar" class="footer">
+        <h1>© 2025 - 2025 placeholder</h1>
+        <div id="navbar-group">
+            <a href="index.html" >
+                <div id="navbar-button">Home</div>
+            </a>
+            <!-- <a href="faq.html">
+                <div id="navbar-button">FAQ</div>
+            </a>
+            <a href="api.html">
+                <div id="navbar-button">API</div>
+            </a> -->
+            <a href="contact.html" >
+                <div id="navbar-button">Contact</div>
+            </a>
+        </div>
+    </section>
+</body>
+
+<script>
+const buttonRows = document.querySelectorAll('.button-row');
+
+function handleRowVisibility(entries) {
+    entries.forEach(entry => {
+        const row = entry.target;
+
+        if (entry.isIntersecting) {
+            // Row enters the viewport
+            row.style.display = 'flex'; // Ensure the row is visible
+            row.style.opacity = '0';    // Start with opacity 0
+            row.style.transform = 'translateY(20px)'; // Start from below
+
+            // Trigger smooth fade-in animation
+            setTimeout(() => {
+                row.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                row.style.opacity = '1';  // Fade in
+                row.style.transform = 'translateY(0)'; // Move to normal position
+            }, 10);
+        } else {
+            // Row exits the viewport
+            row.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            row.style.opacity = '0';    // Fade out
+            row.style.transform = 'translateY(20px)'; // Move it down
+        }
+    });
+}
+
+// Create an IntersectionObserver
+const observer = new IntersectionObserver(handleRowVisibility, {
+    root: null, // Use the viewport as the root
+    rootMargin: '0px', // No additional margin
+    threshold: 0.1 // Trigger when 10% of the row is visible
+});
+
+// Observe each row
+buttonRows.forEach(row => {
+    observer.observe(row);
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const btnNL = document.getElementById('btn-nl');
+    const btnBE = document.getElementById('btn-be');
+
+    // When the 'Lijst Nederland' button is clicked
+    btnNL.addEventListener('click', () => {
+        window.location.href = 'list.html?NL';
+    });
+
+    // When the 'Lijst Belgie' button is clicked
+    btnBE.addEventListener('click', () => {
+        window.location.href = 'list.html?BE';
+    });
+});
+</script>

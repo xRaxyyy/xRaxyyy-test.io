@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+<body>
+    <section id="navbar">
+        <div id="navbar-group">
+            <a href="index.html">
+                <div id="navbar-button">Home</div>
+            </a>
+            <a href="contact.html">
+                <div id="navbar-button" class="active">Contact</div>
+            </a>
+        </div>
+    </section>
+
+    <section id="header">
+        <a id="header-logo" href="index.html">
+            <img src="Images/logo.png" alt="Logo">
+        </a>
+        <h1>HulpdienstVoertuigen</h1>
+        <h2>Neem contact op</h2>
+    </section>
+
+    <form class="contact-form" id="contactForm" action="send_email.php" method="POST">
+        <label for="name">Naam</label>
+        <input type="text" id="name" name="name" placeholder="Peter Boer">
+        <span class="error" id="nameError"></span>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="jouw@email.com">
+        <span class="error" id="emailError"></span>
+
+        <label for="phone">Telefoon nummer</label>
+        <input type="tel" id="phone" name="phone" placeholder="+31 06 123 456">
+        <span class="error" id="phoneError"></span>
+
+        <label for="issue">Reden</label>
+        <select id="issue" name="issue">
+            <option value="">Selecteer Reden</option>
+            <option value="vraag">Ik heb een vraag</option>
+            <option value="ontbrekende">Ontbrekende informatie</option>
+            <option value="bijgewerkt">Informatie moet bijgewerkt worden</option>
+        </select>
+
+        <label for="message">Bericht</label>
+        <textarea id="message" name="message" placeholder="Laat een bericht achter..."></textarea>
+        <span class="error" id="messageError"></span>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        function validateForm() {
+            let isValid = true;
+
+            const name = document.getElementById('name');
+            const email = document.getElementById('email');
+            const phone = document.getElementById('phone');
+            const message = document.getElementById('message');
+
+            const nameError = document.getElementById('nameError');
+            const emailError = document.getElementById('emailError');
+            const phoneError = document.getElementById('phoneError');
+            const messageError = document.getElementById('messageError');
+
+            nameError.textContent = '';
+            emailError.textContent = '';
+            phoneError.textContent = '';
+            messageError.textContent = '';
+
+            if (!name.value.trim()) {
+                nameError.textContent = 'Name is required';
+                isValid = false;
+            }
+
+            if (!email.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+                emailError.textContent = 'Valid email is required';
+                isValid = false;
+            }
+
+            if (!phone.value.trim() || !/^\+?[0-9]{7,15}$/.test(phone.value)) {
+                phoneError.textContent = 'Valid phone number is required';
+                isValid = false;
+            }
+
+            if (!message.value.trim()) {
+                messageError.textContent = 'Message cannot be empty';
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            if (!validateForm()) {
+                event.preventDefault(); // Prevent form submission if validation fails
+            }
+        });
+    </script>
+</body>
+</html>

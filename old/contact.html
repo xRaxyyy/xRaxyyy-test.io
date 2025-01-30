@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="stylee.css" />
+		<!-- <script defer src="app.js"></script> -->
+		<script defer src="popup.js"></script>
+	</head>
+	<body>
+		<!-- <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script><lottie-player src="https://lottie.host/c3c2b976-6bf4-4874-8a8c-c4656b738dfc/cLKexR24Hv.json" background="##ffffff" speed="1" style="width: 300px; height: 300px" loop controls autoplay direction="1" mode="normal"></lottie-player> -->
+
+		<!-- Popup -->
+		<div class="popup_container">
+			<div class="popup">
+				<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+				<lottie-player src="https://lottie.host/b8943def-05ca-4ee5-8892-d369d23ac4d1/cA4JhE3S84.json" style="height: 45%; width: 100%" background="##ffffff" speed="2" direction="1" mode="normal"></lottie-player>
+				<div id="popup-t">Success</div>
+				<div id="popup-p">Bericht is gestuurd!</div>
+				<div id="popup-p2">We reageren zo snel als we kunnen. Bedankt!</div>
+				<button id="popup-b" class="button-primary">Ok</button>
+			</div>
+		</div>
+
+		<!-- Homepage -->
+		<section class="homepage">
+			<!-- Header -->
+			<header class="header">
+				<nav id="nav-container">
+					<!-- Buttons -->
+					<a href="index.html"><button class="btn">Home</button></a>
+					<button class="nav-btn">FAQ</button>
+					<!-- <button class="nav-btn">API</button> -->
+				</nav>
+			</header>
+
+			<!-- Title/Search -->
+			<div class="title hidden">
+				<div><img id="title_logo" src="Images/Logos/LogoGradient.png" alt="" /></div>
+				<h1 class="h1 h--center">Hulpdienstvoertuigen</h1>
+				<h2 class="h2 h--center">Neem contact op</h2>
+			</div>
+		</section>
+
+		<!-- Form -->
+		<section id="contact">
+			<div id="form">
+				<!-- Name -->
+				<div class="input_container hidden">
+					<label class="label">Naam</label>
+					<input class="input" type="text" placeholder="Peter Boer" />
+				</div>
+
+				<!-- Email -->
+				<div class="input_container hidden">
+					<label class="label">E-mail</label>
+					<input class="input" type="text" placeholder="jouw@domain.com" />
+				</div>
+
+				<!-- Phonenumber -->
+				<div class="input_container hidden">
+					<label class="label">Telefoon nummer</label>
+					<input class="input" type="text" placeholder="+31 06 123 456" />
+				</div>
+
+				<!-- Message -->
+				<div class="input_container hidden" id="message">
+					<label class="label">Bericht</label>
+					<textarea class="input input--no-resize" name="" id="textarea" class="input" placeholder="Laat een bericht achter..."></textarea>
+				</div>
+
+				<!-- Reason -->
+				<div id="reden">
+					<label class="label">Reden</label>
+
+					<p>
+						<input type="radio" id="vraag" name="reden" checked />
+						<label class="label" for="vraag">Ik heb een vraag</label>
+					</p>
+
+					<p>
+						<input type="radio" id="info" name="reden" />
+						<label class="label" for="info">Ontbrekende informatie</label>
+					</p>
+
+					<p>
+						<input type="radio" id="upd" name="reden" />
+						<label class="label" for="upd">Informatie moet bijgewerkt worden</label>
+					</p>
+
+					<button class="btn hidden" id="send-button">Verzend bericht</button>
+				</div>
+			</div>
+		</section>
+	</body>
+</html>

@@ -1,0 +1,797 @@
+:root {
+    --text-color1: #fff;
+    --text-color2: #dcdcdc;
+    --text-color3: #C0C0C0;
+    --text-color4: #8a8a8a;
+    --accent-color: #1a73e8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', 'Helvetica', sans-serif;
+
+    /* Force the body to fit the viewport */
+    width: 100%;
+    min-height: 100vh;
+
+    /* Background image properties */
+    background-image: url(Images/BG.png); 
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    overflow-x: hidden; /* Prevents horizontal scrolling only */
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    padding: 20px clamp(20px, 5%, 40px); /* Responsive side padding */
+    box-sizing: border-box;
+}
+
+#navbar.footer {
+    position: relative;
+    margin-top: 50px;
+    background-color: #323232;
+    bottom: 0px;
+}
+
+#navbar-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    gap: 20px;
+}
+
+#navbar-region {
+    display: flex;
+    align-self: flex-start;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+#navbar-button,
+#navbar-region a,
+#navbar h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: #b4b4b4;
+    transition: color 0.3s ease;
+    cursor: default;
+}
+
+#navbar h1 {
+    margin-right: 25px;
+}
+
+#navbar-group a,
+#navbar-button,
+#navbar-region a.clickable {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#navbar-button:hover,
+#navbar-region a.clickable:hover {
+    color: var(--accent-color);
+}
+
+#navbar-button.active {
+    color: var(--accent-color);
+}
+
+#header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 2vw; /* Padding scales with viewport width */
+    box-sizing: border-box;
+}
+
+#header-logo img {
+    width: clamp(20px, 11vw, 90px); /* Image width scales between 20px and 90px based on viewport width */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Prevent image from exceeding its container width */
+    max-height: 90px; /* Limit the height for larger viewports */
+}
+
+#header h1 {
+    font-size: clamp(20px, 7vw, 60px); /* Reduced minimum font size from 30px to 20px */
+    font-weight: 700;
+    color: var(--text-color1);
+    margin: 0;
+}
+
+#header h2 {
+    font-size: clamp(11.6px, 4vw, 35px); /* Reduced minimum font size from 20px to 16px */
+    font-weight: 500;
+    color: var(--text-color2);
+    margin: 0;
+}
+
+#header-btn-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 3vh; /* Margin scales with viewport height */
+    gap: 2vw; /* Gap scales with viewport width */
+}
+
+#header-btn-group button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: clamp(240px, 35vw, 300px); /* Width scales between 150px and 300px */
+    height: clamp(30px, 4.5vw, 40px);   /* Height scales between 30px and 60px */
+    border-radius: 5rem;
+    border: var(--accent-color) 2px solid;
+    background-color: #1a73e831;
+    color: var(--accent-color);
+    font-size: clamp(12px, 2vw, 14px); /* Font size scales with viewport width, with a min of 12px and max of 14px */
+    font-weight: 700;
+    will-change: transform;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+#header-btn-group button:hover {
+    background-color: #1a73e846;
+    transform: scale(1.05);
+}
+
+
+
+
+
+#image-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    margin-top: 40px;
+    padding: 20px 0px;
+}
+
+#image-container .image-holder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Scale the image to fit the container width */
+    max-width: 700px; /* Restrict the image's maximum size */
+    height: auto; /* Maintain the aspect ratio of the image */
+    border-radius: 1rem;
+}
+
+#image-container .image-holder img {
+    width: 100%;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19); /* Adds a subtle shadow */
+}
+
+#image-container .image-holder .holder-1 ,
+#image-container .image-holder .holder-3 {
+    width: 90%; /* Adjust the size as needed */
+}
+
+
+#home-info {
+    display: flex;
+    flex-direction: row; /* Side-by-side layout by default */
+    justify-content: space-between; /* Space out left and right sections */
+    align-items: flex-start; /* Align items to the top */
+    width: 100%;
+    min-height: 900px; /* Minimum height for larger screens */
+    padding: 100px 20px; /* Padding around the container */
+    box-sizing: border-box; /* Include padding in width/height calculations */
+    position: relative; /* For any absolutely positioned child elements */
+    overflow: hidden; /* Prevent content from overflowing */
+}
+
+#home-info #left {
+    width: 45%; /* Each section takes up 45% of the container */
+    max-width: 500px; /* Limit maximum width */
+    text-align: left; /* Default text alignment */
+    align-self: flex-start; /* Align #left to the top */
+    top: -50px; /* Move #left slightly higher */
+}
+
+#home-info #right {
+    margin-top: auto;
+    width: 45%; /* Each section takes up 45% of the container */
+    max-width: 500px; /* Limit maximum width */
+    text-align: right; /* Right-align text for the right section */
+    align-self: flex-start; /* Align #right to the top */
+}
+
+#home-info #left img,
+#home-info #right img {
+    width: clamp(100px, 30vw, 300px); /* Responsive image sizing */
+    display: block;
+    margin-bottom: 20px; /* Space below the image */
+}
+
+#home-info #left img {
+    margin-right: auto; /* Align left image to the left */
+}
+
+#home-info #right img {
+    margin-left: auto; /* Align right image to the right */
+}
+
+#home-info #left-text,
+#home-info #right-text {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between text elements */
+}
+
+#home-info #left-text {
+    align-items: flex-start; /* Align left text to the left */
+}
+
+#home-info #right-text {
+    align-items: flex-end; /* Align right text to the right */
+}
+
+#home-info h1 {
+    font-size: clamp(30px, 6vw, 60px); /* Responsive heading size */
+    font-weight: 700;
+    color: var(--text-color1);
+}
+
+#home-info h2 {
+    font-size: clamp(16px, 3vw, 24px); /* Responsive subheading size */
+    font-weight: 500;
+    color: var(--text-color4);
+}
+
+/* Media Query for Medium Screens (1100px and below) */
+@media (max-width: 1100px) {
+
+    #home-info #left,
+    #home-info #right {
+        width: 48%; /* Slightly reduce width for smaller screens */
+    }
+
+    #home-info #right {
+        margin-top: auto;
+    }
+}
+
+/* Media Query for Stacking on Small Screens (900px and below) */
+@media (max-width: 900px) {
+    #home-info {
+        flex-direction: column; /* Stack sections vertically */
+        align-items: center; /* Center-align sections */
+        min-height: auto; /* Allow container to shrink to content */
+    }
+
+    #home-info #left,
+    #home-info #right {
+        width: 100%; /* Full width for stacked layout */
+        max-width: 100%; /* Full width for stacked layout */
+        text-align: center; /* Center-align text for stacked layout */
+        align-self: center; /* Reset alignment for stacked layout */
+        top: 0; /* Reset top position for stacked layout */
+    }
+
+    #home-info #left {
+        margin-bottom: 50px;
+    }
+
+    #home-info #left img,
+    #home-info #right img {
+        margin: 0 auto 20px; /* Center-align images and add space below */
+    }
+
+    #home-info #left-text,
+    #home-info #right-text {
+        align-items: center; /* Center-align text for stacked layout */
+    }
+
+    #home-info h1 {
+        font-size: clamp(24px, 6vw, 48px); /* Smaller heading size */
+    }
+
+    #home-info h2 {
+        font-size: clamp(14px, 3vw, 20px); /* Smaller subheading size */
+    }
+}
+
+#index-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    margin-top: 75px;
+}
+
+#index-list h1 {
+    font-size: clamp(20px, 9vw, 60px);
+    font-weight: 700;
+    color: var(--text-color1);
+}
+
+#index-list h2 {
+    font-size: clamp(11.6px, 5vw, 35px);
+    font-weight: 500;
+    color: var(--text-color2);
+}
+
+#index-list h3 {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-color4);
+    cursor: pointer;
+}
+
+
+#buttons-holder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    padding: 25px 20px;
+}
+
+.button-row {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 40px;
+    width: 100%;
+    flex-wrap: nowrap; /* Prevent wrapping by default */
+}
+
+#list-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 250px; /* Flex properties */
+    max-width: 250px; /* Limit width to 250px */
+    height: auto;
+    overflow: hidden; /* Prevent overflow issues */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+    will-change: transform;
+}
+
+#list-images:hover {
+    transform: scale(1.025);
+}
+
+#list-images img {
+    max-width: 100%; /* Ensure the image scales responsively */
+    height: auto;    /* Keep the aspect ratio */
+    display: block;  /* Remove inline spacing below the image */
+    object-fit: contain; /* Ensure the image fits inside the container */
+}
+
+.button-row.show {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.button-row:first-child {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Media Query for Screens Smaller Than 800px */
+@media (max-width: 800px) {
+    .button-row {
+        flex-wrap: wrap; /* Allow wrapping of items */
+        gap: 20px; /* Reduce gap between items */
+        margin-bottom: 20px; /* Reduce margin between rows */
+    }
+
+    .button-row > #list-images {
+        flex: 1 1 calc(50% - 10px); /* Two items per row with gap */
+        max-width: 250px;
+    }
+}
+
+
+#index-questions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 25px 20px;
+}
+
+#index-questions h1 {
+    font-size: clamp(20px, 9vw, 60px);
+
+    font-weight: 700;
+    color: var(--text-color1);
+}
+
+#index-questions h2 {
+    font-size: clamp(11.6px, 5vw, 35px);
+    font-weight: 500;
+    color: var(--text-color2);
+}
+
+
+
+#list-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    padding: 32px 40px;
+    gap: 20px;
+}
+
+#list-buttons input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    height: 40px;
+    padding: 8px 16px;
+    color: #b3b3b3;
+    font-weight: 500;
+    font-size: 16px;
+    background-color: #26282f;
+    border: none;
+    border-radius: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+    /* transition: box-shadow 0.3s ease; */
+}
+
+#list-buttons input:focus {
+    outline: none;
+    box-shadow: 
+        0 0 0 1.5px #fff,
+        0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+}
+
+#dropdown-holder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; 
+}
+
+#dropdown-holder .dropdown {
+    position: relative;
+    width: fit-content;
+}
+
+.dropdown-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    padding: 8px 16px;
+    background-color: #26282f;
+    color: var(--text-color2);
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+    /* transition: box-shadow 0.3s ease; */
+}
+
+.dropdown-button i {
+    font-size: 12px;
+}
+
+
+#dropdown-holder .dropdown.active .dropdown-button {
+    box-shadow: 
+        0 0 0 1.5px #fff,
+        0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+}
+
+#hulpdienst-dropdown {
+    width: 200px;
+}
+
+#regio-dropdown {
+    width: 350px;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+    list-style: none;
+    margin: 0;
+    margin-top: 10px;
+    width: 100%;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #26282f;
+    color: var(--text-color2);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: none;
+    z-index: 1;
+    overflow: hidden;
+    max-height: 409px; /* Set max height for 15 items (approx.) */
+    overflow-y: auto; /* Add vertical scrolling */
+}
+
+/* Scrollbar styling (optional) */
+.dropdown-menu::-webkit-scrollbar {
+    width: 8px;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb {
+    background-color: #636363;
+    border-radius: 4px;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb:hover {
+    background-color: var(--accent-hover-color);
+}
+
+.dropdown-menu li {
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: transparent;
+    color: var(--text-color2);
+}
+
+.dropdown-menu li:hover {
+    background-color: var(--accent-color);
+}
+
+/* Show dropdown menu when active */
+.dropdown.active .dropdown-menu {
+    display: block;
+}
+
+
+/* Specific styles for the first and last child to preserve border radius */
+.dropdown-menu li:first-child:hover {
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+
+.dropdown-menu li:last-child:hover {
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+
+
+
+#table-container {
+    position: relative;
+    width: 100%; /* Takes up full width of the page */
+    max-width: 1600px; /* Optional: Set a max-width to prevent it from getting too wide */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 0 40px; /* Adds horizontal padding of 40px on both sides */
+    box-sizing: border-box; /* Ensures padding is included in the total width */
+    overflow-x: auto; /* Allows horizontal scrolling */
+}
+
+#table {
+    width: 100%; /* Table will take up full width of the container */
+    overflow-x: auto; /* Allows horizontal scrolling if the table overflows */
+    margin: 0 auto;
+    box-sizing: border-box; /* Ensures padding is included in the total width */
+    border-spacing: 1px; /* Adds 1px gap between table cells */
+}
+
+#list_table {
+    width: 1500px; /* Fixed width of the table */
+    display: table;
+    border-collapse: separate; /* Ensures spacing between cells */
+}
+
+#list_table th,
+#list_table td {
+    padding: 10px; /* Optional, for better readability */
+    /* border: 1px solid #ddd; Optional, for visual separation */
+}
+
+#list_table tr th,
+#list_table tr td {
+    font-family: var(--font);
+    font-style: italic;
+    color: #fff;
+    text-align: start;
+    width: auto; /* Allow columns to adjust dynamically */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+#list_table tr th {
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.list_even {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.list_address {
+    background-color: #29262c;
+}
+
+/* Adjust width for license plate column */
+#list_table tr td.td-class-5,
+#list_table tr th.th-class-5 {
+    width: 90px;
+    text-align: center;
+}
+
+/* Style the scrollbar container */
+#scrollbar {
+    position: fixed; /* Keeps the scrollbar fixed at the bottom of the page */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    z-index: 1; /* Keeps the scrollbar above content */
+}
+
+/* Style the inner scrollbar */
+#scrollbar-inner {
+    width: calc(1500px + 80px); /* Adjust width to account for the 40px padding on each side */
+    height: 100%;
+}
+
+/* Scrollbar container */
+::-webkit-scrollbar {
+    height: 10px; /* Height of the horizontal scrollbar */
+    width: 10px;
+    background-color: #333; /* Dark background color for the scrollbar */
+}
+
+/* Scrollbar thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+    background-color: #555; /* Darker shade for the thumb */
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* Scrollbar thumb hover */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #777; /* Lighter shade when hovered */
+}
+
+/* Scrollbar track (the part the thumb moves along) */
+::-webkit-scrollbar-track {
+    background-color: #222; /* Darker track background */
+}
+
+
+
+
+
+
+
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    padding: 20px 30px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.contact-form h2 {
+    margin-bottom: 15px;
+    color: var(--text-color2);
+    text-align: center;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--text-color3);
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    color: var(--text-color4);
+    background-color: #26282f;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    border: none;
+    outline: none;
+    box-shadow: 
+    0 0 0 1.5px #fff,
+    0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 80px;
+    font-family: inherit;
+}
+
+.contact-form button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    will-change: transform;
+    transition: transform 0.3s ease;
+}
+.contact-form button:hover {
+    transform: scale(1.025);
+}
+
+.contact-form .error {
+    color: red;
+    font-size: 12px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+
+
+@media (max-width: 750px) {
+
+    #image-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    #image-container .image-holder .holder-1,
+    #image-container .image-holder .holder-2,
+    #image-container .image-holder .holder-3 {
+        width: 70%;
+    }
+
+}
